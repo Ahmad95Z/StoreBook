@@ -1,0 +1,14 @@
+{% extends 'store/base.html' %}
+{% block content %}
+{% if user.is_superuser %}
+        <form action="" method = "POST">
+            {% csrf_token %}
+            <h3>Are you sure?</h3><br/>
+            <div>
+            
+                <button class="btn btn-secondary">Delete Product</button>
+            </div>
+        </form>
+    
+{% endif %}
+{% endblock %} 
