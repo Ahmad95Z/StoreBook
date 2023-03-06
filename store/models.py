@@ -29,13 +29,13 @@ class Product(models.Model):
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name="product_creator",
+        related_name="product_creator",default='admin'
     )
     title = models.CharField(max_length=250)
     author = models.CharField(max_length=250, default="admin")
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to="articles/")
-    slug = models.SlugField(max_length=250)
+    slug = models.SlugField(max_length=250, unique=True)
     price = models.DecimalField(max_digits=4, decimal_places=2, default=0)
     in_stock = models.BooleanField(default=True)
     in_active = models.BooleanField(default=True)

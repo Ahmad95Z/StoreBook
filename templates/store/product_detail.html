@@ -14,7 +14,7 @@
                 <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{ product.image.url }}">
             </div>
             <div class="col-md-7 col-lg-7 ps-md-3 ps-lg-5">
-                <h1 class="mb-0 h4">{{ product.title }}</h1>
+                <h1 class="mb-0 h4">{{ product.title }}  ({{ product.category }})</h1>
                 <p><span class="lead">{{ product.author }}</span> (Author)</p>
                 <p>{{ product.description|slice:":355" }}...</p>
                 <div class="border">
@@ -36,10 +36,11 @@
                                 </select>
 
                             </div>
-                            <div class="col-6 text-end">
                             {% if user.is_superuser %}
+                            <div class="col-6 text-end">
                                 <a  class="btn btn-secondary btn-sm" href="{% url 'store:delete_product' product.pk  %}">Delete</a>
-                            {% endif %}
+                                <a  class="btn btn-secondary btn-sm" href="{% url 'store:update_product' product.pk  %}">Update</a>
+                                {% endif %}
                                 {% if user.is_authenticated %}
                                 <button type="button" class="btn btn-secondary btn-sm" id="add-button" value="{{ product.id }}">Add tobasket</button></div>
                         {% endif %}

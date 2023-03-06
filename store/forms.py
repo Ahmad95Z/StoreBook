@@ -16,3 +16,17 @@ class AddProductForm(forms.ModelForm):
             "in_stock",
             "in_active",
         )
+
+
+class UpdateProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = (
+            "title",
+            "slug",
+            "description",
+            "category",
+            "price",
+            "in_stock",
+            "in_active",
+        )

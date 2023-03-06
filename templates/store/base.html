@@ -44,6 +44,9 @@
                             </ul>
                         </li>
                     </ul>
+                      <form class="d-flex" role="search" action="{% url 'store:search_results' %}" method='get'>
+                        <input class="form-control me-2" name="q" type="text" placeholder="Search" aria-label="Search">
+                      </form>
                 {% if user.is_authenticated %}
                     <a type="button" role="button" href="{% url "logout" %}" 
                     class="btn btn-outline-secondary">
