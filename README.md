@@ -1,13 +1,13 @@
-Django-StoreBook Установка Python Установите Python версии 3.6 и выше.
+##StoreBook
 
-Зависмости Установите зависимости из файла requirements.txt
+###Сервис магазин книг
 
-Команда для windows pip install -r requirements.txt
+###Установка
 
-Команда для linux или macOS pip3 install -r requirements.txt
+####Docker
+Установите на ваш ПК Docker
 
-Запуск Для запуска программы используйте файл manage.py
+####Запуск
+Для запуска программы используйте 'docker-compose up --build'
 
-Команда для windows python manage.py runserver
-
-Команда linux или macOS python3 manage.py runserver
+Сервис доступен по адресу '127.0.0.1:8000
